@@ -16,6 +16,8 @@ import { withStyles } from '@material-ui/core/styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitch, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import IconButton from '@material-ui/core/IconButton';
+import { ArrowDropDown } from '@material-ui/icons'
 
 import './Intro.css'
 
@@ -73,6 +75,7 @@ const styles = theme => ({
 	},
 	heroUnit: {
 		background: 'linear-gradient(rgba(20,20,20, 0.5), rgba(20,20,20, 0.5)), url(./intro-bg.jpg) no-repeat center center',
+		backgroundSize: 'cover',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -108,12 +111,20 @@ const styles = theme => ({
 			fontSize: '3rem',
 		},
 	},
-	iconHover: {
-		backgroundColor: 'red',
-	},
 	heroContent: {
-		maxWidth: 600,
 		margin: '0 auto',
+		[theme.breakpoints.down('sm')]: {
+			maxWidth: '18rem',
+		},
+		[theme.breakpoints.up('sm')]: {
+			maxWidth: '28rem',
+		},
+		[theme.breakpoints.up('md')]: {
+			maxWidth: '36rem',
+		},
+		[theme.breakpoints.up('lg')]: {
+			maxWidth: '40rem',
+		},
 	},
 	heroButtons: {
 		marginTop: theme.spacing.unit * 4,
@@ -182,9 +193,12 @@ function Intro(props) {
 							<Grid container spacing={16} justify="center">
 								<Grid item>
 									<AnchorLink className={classes.noAnchorStyle} href='#about'>
-										<Button variant="outlined" className={classes.button}>
+										{/* <Button variant="outlined" className={classes.button}>
 											About me
-										</Button>
+										</Button> */}
+										<IconButton className={classes.button} aria-label="Delete">
+											<ArrowDropDown />
+										</IconButton>
 									</AnchorLink>
 								</Grid>
 							</Grid>
