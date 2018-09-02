@@ -1,13 +1,12 @@
-svg {
+svg.clickable {
 	transition: color .3s linear;
 	-webkit-transition: color .3s linear;
 	-moz-transition: color .3s linear;
 }
 
-svg:hover {
+svg.clickable:hover {
 	color: yellow;
 	transition: color .3s linear;
 	-webkit-transition: color .3s linear;
 	-moz-transition: color .3s linear;
-	cursor: pointer;
 }
