@@ -10,13 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitch, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import IconButton from '@material-ui/core/IconButton';
 import { ArrowDropDown } from '@material-ui/icons'
+import { Parallax } from 'react-parallax';
 
 import './Intro.css'
 
 const styles = theme => ({
-	icon: {
-		marginRight: theme.spacing.unit * 2,
-	},
 	greeting: {
 		color: 'yellow',
 		[theme.breakpoints.down('sm')]: {
@@ -63,7 +61,8 @@ const styles = theme => ({
 		textDecoration: 'none'
 	},
 	heroUnit: {
-		background: 'linear-gradient(rgba(20,20,20, 0.5), rgba(20,20,20, 0.5)), url(./intro-bg.jpg) no-repeat center center',
+		// background: 'linear-gradient(rgba(20,20,20, 0.5), rgba(20,20,20, 0.5)), url(./intro-bg.jpg) no-repeat center center',
+		background: 'linear-gradient(rgba(20,20,20, 0.5), rgba(20,20,20, 0.5))',
 		backgroundSize: 'cover',
 		display: 'flex',
 		alignItems: 'center',
@@ -128,39 +127,41 @@ function Intro(props) {
 			<CssBaseline />
 			<main>
 				{/* Hero unit */}
-				<div className={classes.heroUnit}>
-					<div className={classes.heroContent}>
-						<Typography align="center" className={classes.greeting} gutterBottom>
-							Hello.
-						</Typography>
-						<Typography variant="display3" align="center" className={classes.name} gutterBottom>
-							I'm Clay Benson
-						</Typography>
-						<Typography variant="title" align="center" className={classes.intro} paragraph>
-							Something short and sweet about myself to grab the interest of the viewer.
-							Probably something about like... software? I&apos;m not really sure.
-						</Typography>
-						<div className={classes.heroButtons}>
-							<Grid container spacing={16} justify="center">
-								<Grid item>
-									<AnchorLink className={classes.noAnchorStyle} href='#about'>
-										{/* <Button variant="outlined" className={classes.button}>
-											About me
-										</Button> */}
-										<IconButton className={classes.button} aria-label="Delete">
-											<ArrowDropDown />
-										</IconButton>
-									</AnchorLink>
+				<Parallax strength={300} bgImage={'./intro-bg.jpg'}>
+					<div className={classes.heroUnit}>
+						<div className={classes.heroContent}>
+							<Typography align="center" className={classes.greeting} gutterBottom>
+								Hello.
+							</Typography>
+							<Typography variant="display3" align="center" className={classes.name} gutterBottom>
+								I'm Clay Benson
+							</Typography>
+							<Typography variant="title" align="center" className={classes.intro} paragraph>
+								Something short and sweet about myself to grab the interest of the viewer.
+								Probably something about like... software? I&apos;m not really sure.
+							</Typography>
+							<div className={classes.heroButtons}>
+								<Grid container spacing={16} justify="center">
+									<Grid item>
+										<AnchorLink className={classes.noAnchorStyle} href='#about'>
+											{/* <Button variant="outlined" className={classes.button}>
+												About me
+											</Button> */}
+											<IconButton className={classes.button} aria-label="Delete">
+												<ArrowDropDown />
+											</IconButton>
+										</AnchorLink>
+									</Grid>
 								</Grid>
-							</Grid>
+							</div>
+						</div>
+						<div className={classes.iconSet}>
+							<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
+							<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
+							<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
 						</div>
 					</div>
-					<div className={classes.iconSet}>
-						<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
-						<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
-						<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
-					</div>
-				</div>
+				</Parallax>
 			</main>
 		</React.Fragment>
 	);
