@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Intro from './components/Intro/Intro';
-import Resume from './components/Resume/Resume';
-import Footer from './components/Footer/Footer';
+import Intro from './components/Intro/Intro.jsx';
+import Resume from './components/Resume/Resume.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 class App extends Component {
   render() {

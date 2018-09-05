@@ -11,6 +11,7 @@ import { faGithub, faTwitch, faLinkedin } from '@fortawesome/free-brands-svg-ico
 import IconButton from '@material-ui/core/IconButton';
 import { ArrowDropDown } from '@material-ui/icons'
 import { Parallax } from 'react-parallax';
+import FadeOnStart from '../UtilComponents/FadeOnStart';
 
 import './Intro.css'
 
@@ -71,6 +72,9 @@ const styles = theme => ({
 		position: 'relative',
 		minHeight: '400px'
 	},
+	parallaxBg: {
+		bottom: '-200px',
+	},
 	iconSet: {
 		position: 'absolute',
 		bottom: '0',
@@ -119,52 +123,66 @@ const styles = theme => ({
 	},
 });
 
-function Intro(props) {
-	const { classes } = props;
+class Intro extends React.Component {
+	render() {
+		const { classes } = this.props;
+		const fadeDelayUnit = 150;
+		const timeout = 1000;
 
-	return (
-		<React.Fragment>
-			<CssBaseline />
-			<main>
-				{/* Hero unit */}
-				<Parallax strength={300} bgImage={'./intro-bg.jpg'}>
-					<div className={classes.heroUnit}>
-						<div className={classes.heroContent}>
-							<Typography align="center" className={classes.greeting} gutterBottom>
-								Hello.
-							</Typography>
-							<Typography variant="display3" align="center" className={classes.name} gutterBottom>
-								I'm Clay Benson
-							</Typography>
-							<Typography variant="title" align="center" className={classes.intro} paragraph>
-								Something short and sweet about myself to grab the interest of the viewer.
-								Probably something about like... software? I&apos;m not really sure.
-							</Typography>
-							<div className={classes.heroButtons}>
-								<Grid container spacing={16} justify="center">
-									<Grid item>
-										<AnchorLink className={classes.noAnchorStyle} href='#about'>
-											{/* <Button variant="outlined" className={classes.button}>
-												About me
-											</Button> */}
-											<IconButton className={classes.button} aria-label="Delete">
-												<ArrowDropDown />
-											</IconButton>
-										</AnchorLink>
-									</Grid>
-								</Grid>
+		return (
+			<React.Fragment>
+				<CssBaseline />
+				<main>
+					{/* Hero unit */}
+					<Parallax bgClassName={classes.parallaxBg} strength={400} bgImage={'./intro-bg.jpg'}>
+						<div className={classes.heroUnit}>
+							<div className={classes.heroContent}>
+								<FadeOnStart timeout={timeout} delay={0*fadeDelayUnit}>
+									<Typography align="center" className={classes.greeting} gutterBottom>
+										Hello.
+									</Typography>
+								</FadeOnStart>
+								<FadeOnStart timeout={timeout} delay={1*fadeDelayUnit}>
+									<Typography variant="display3" align="center" className={classes.name} gutterBottom>
+										I'm Clay Benson
+									</Typography>
+								</FadeOnStart>
+								<FadeOnStart timeout={timeout} delay={2*fadeDelayUnit}>
+									<Typography variant="title" align="center" className={classes.intro} paragraph>
+										Something short and sweet about myself to grab the interest of the viewer.
+										Probably something about like... software? I&apos;m not really sure.
+									</Typography>
+								</FadeOnStart>
+								<FadeOnStart timeout={timeout} delay={3*fadeDelayUnit}>
+									<div className={classes.heroButtons}>
+										<Grid container spacing={16} justify="center">
+											<Grid item>
+												<AnchorLink className={classes.noAnchorStyle} href='#about'>
+													{/* <Button variant="outlined" className={classes.button}>
+														About me
+													</Button> */}
+													<IconButton className={classes.button} aria-label="Delete">
+														<ArrowDropDown />
+													</IconButton>
+												</AnchorLink>
+											</Grid>
+										</Grid>
+									</div>
+								</FadeOnStart>
 							</div>
+							<FadeOnStart timeout={timeout} delay={4*fadeDelayUnit}>
+								<div className={classes.iconSet}>
+									<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
+									<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
+									<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
+								</div>
+							</FadeOnStart>
 						</div>
-						<div className={classes.iconSet}>
-							<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
-							<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
-							<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
-						</div>
-					</div>
-				</Parallax>
-			</main>
-		</React.Fragment>
-	);
+					</Parallax>
+				</main>
+			</React.Fragment>
+		);
+	}
 }
 
 Intro.propTypes = {
