@@ -148,19 +148,20 @@ class Intro extends React.Component {
 									</Typography>
 								</FadeOnStart>
 								<FadeOnStart timeout={timeout} delay={2*fadeDelayUnit}>
-									<Typography variant="title" align="center" className={classes.intro} paragraph>
-										Something short and sweet about myself to grab the interest of the viewer.
-										Probably something about like... software? I&apos;m not really sure.
-									</Typography>
+									<div>
+										<Typography variant="title" align="center" className={classes.intro} paragraph>
+											I'm a Software Developer.
+										</Typography>
+										<Typography variant="title" align="center" className={classes.intro} paragraph>
+											I enjoy breaking and fixing things.
+										</Typography>
+									</div>
 								</FadeOnStart>
 								<FadeOnStart timeout={timeout} delay={3*fadeDelayUnit}>
 									<div className={classes.heroButtons}>
 										<Grid container spacing={16} justify="center">
 											<Grid item>
 												<AnchorLink className={classes.noAnchorStyle} href='#about'>
-													{/* <Button variant="outlined" className={classes.button}>
-														About me
-													</Button> */}
 													<IconButton className={classes.button} aria-label="Delete">
 														<ArrowDropDown />
 													</IconButton>

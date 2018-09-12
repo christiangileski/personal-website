@@ -24,7 +24,7 @@ class FadeOnStart extends React.Component {
 		const {	timeout	} = this.props;
 		return (
 			<Fade in={fading} timeout={timeout}>
-				{this.props.children}
+					{this.props.children}
 			</Fade>
 		);
 	}
