@@ -31,7 +31,6 @@ class FadeOnStart extends React.Component {
 }
 
 FadeOnStart.propTypes = {
-	classes: PropTypes.object.isRequired,
 	delay: PropTypes.number.isRequired,
 	timeout: PropTypes.number.isRequired,
 };
