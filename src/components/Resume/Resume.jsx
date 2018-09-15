@@ -4,17 +4,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import ResumeCard from './ResumeCard';
 import { Typography, Grid } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 const styles = (theme) => {
-	console.log('theme', theme);
 	return {
 		layout: {
 			width: 'auto',
-			marginLeft: theme.spacing.unit * 3,
-			marginRight: theme.spacing.unit * 3,
-			[theme.breakpoints.up(1000 + theme.spacing.unit * 3 * 2)]: {
+			marginLeft: theme.spacing.unit * 6,
+			marginRight: theme.spacing.unit * 6,
+			[theme.breakpoints.up(1000 + theme.spacing.unit * 6 * 2)]: {
 				width: 1000,
 				marginLeft: 'auto',
 				marginRight: 'auto',
@@ -28,7 +25,8 @@ const styles = (theme) => {
 		},
 		cardCategoryLabel: {
 			borderBottom: `3px solid ${theme.palette.primary.main}`,
-			display: 'inline',
+			display: 'inline-block',
+			marginBottom: theme.spacing.unit * 2,
 		},
 	};
 }
@@ -47,8 +45,35 @@ function Resume(props) {
 						</Typography>
 					</Grid>
 					<Grid item xs={12} sm={9}>
-						<ResumeCard />
-						<ResumeCard />
+						<ResumeCard 
+							title="Rochester Institute of Technology"
+							subtitle="BS in Computer Science"
+							date="May 2018"
+							caption="Related coursework: Analysis of Algorithms, Discrete Mathematics">
+							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
+							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
+							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
+							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
+						</ResumeCard>
+					</Grid>
+				</Grid>
+				<Grid container direction="row" spacing={16}>
+					<Grid className={classes.cardCategory} item xs={12} sm={3}>
+						<Typography className={classes.cardCategoryLabel} variant="headline">
+							Work Experience
+						</Typography>
+					</Grid>
+					<Grid item xs={12} sm={9}>
+						<ResumeCard 
+							title="Ellucian"
+							subtitle="Associate Software Developer"
+							date="August 2017 - Current"
+							caption="">
+							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
+							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
+							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
+							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
+						</ResumeCard>
 					</Grid>
 				</Grid>
 			</div>
