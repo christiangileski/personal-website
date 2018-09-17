@@ -13,11 +13,11 @@ import { ArrowDropDown } from '@material-ui/icons'
 import { Parallax } from 'react-parallax';
 import FadeOnStart from '../UtilComponents/FadeOnStart';
 
-import './Intro.css'
+// import './Intro.css'
 
 const styles = theme => ({
 	greeting: {
-		color: 'yellow',
+		color: theme.palette.primary.main,
 		[theme.breakpoints.down('sm')]: {
 			fontSize: '2rem',
 		},
@@ -55,11 +55,12 @@ const styles = theme => ({
 		},
 	},
 	button: {
-		color: 'rgba(255,255,0,.8)',
-		border: '1px solid rgba(255, 255, 0, 0.8)'
+		color: theme.palette.primary.main,
+		// border: '1px solid rgba(255, 255, 0, 0.8)'
+		border: `1px solid ${theme.palette.primary.main}`
 	},
 	noAnchorStyle: {
-		textDecoration: 'none'
+		textDecoration: 'none',
 	},
 	heroUnit: {
 		// background: 'linear-gradient(rgba(20,20,20, 0.5), rgba(20,20,20, 0.5)), url(./intro-bg.jpg) no-repeat center center',
@@ -101,6 +102,10 @@ const styles = theme => ({
 		},
 		[theme.breakpoints.up('lg')]: {
 			fontSize: '3rem',
+		},
+		transition: 'color .3s linear',
+		'&:hover': {
+			color: theme.palette.primary.main,
 		},
 	},
 	heroContent: {

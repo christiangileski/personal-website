@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
@@ -18,6 +19,9 @@ const styles = theme => ({
 	},
 	information: {
 		display: 'inline-block',
+		[theme.breakpoints.down('xs')]: {
+			display: 'block',
+		},
 	},
 	bullet: {
 		marginLeft: '5px',
@@ -45,12 +49,14 @@ function ResumeCard(props) {
 				<Typography className={classes.title} color="textPrimary" paragraph variant="headline" >
 					{title}
 				</Typography>
-				<Typography color="textSecondary" className={classes.information} paragraph variant="title" >
+				<Typography color="textSecondary" className={classes.information} variant="title" >
 					{subtitle}
 				</Typography>
-				<Typography color="textSecondary" className={classNames(classes.information, classes.bullet)} paragraph variant="subheading" >
-					•
-				</Typography>
+				<Hidden xsDown>
+					<Typography color="textSecondary" className={classNames(classes.information, classes.bullet)} paragraph variant="subheading" >
+						•
+					</Typography>
+				</Hidden>
 				<Typography color="textSecondary" className={classes.information} paragraph  variant="subheading" >
 					{date}
 				</Typography>

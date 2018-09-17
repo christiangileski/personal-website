@@ -38,7 +38,7 @@ function Resume(props) {
 		<React.Fragment>
 			<CssBaseline />
 			<div id="about" className={classes.layout}>
-				<Grid container direction="row" spacing={16}>
+				<Grid container direction="row">
 					<Grid className={classes.cardCategory} item xs={12} sm={3}>
 						<Typography className={classes.cardCategoryLabel} variant="headline">
 							Education
@@ -57,10 +57,10 @@ function Resume(props) {
 						</ResumeCard>
 					</Grid>
 				</Grid>
-				<Grid container direction="row" spacing={16}>
+				<Grid container direction="row">
 					<Grid className={classes.cardCategory} item xs={12} sm={3}>
 						<Typography className={classes.cardCategoryLabel} variant="headline">
-							Work Experience
+							Work
 						</Typography>
 					</Grid>
 					<Grid item xs={12} sm={9}>
