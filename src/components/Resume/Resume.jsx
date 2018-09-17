@@ -48,12 +48,10 @@ function Resume(props) {
 						<ResumeCard 
 							title="Rochester Institute of Technology"
 							subtitle="BS in Computer Science"
-							date="May 2018"
+							date="May 2017"
 							caption="Related coursework: Analysis of Algorithms, Discrete Mathematics">
-							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
-							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
-							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
-							A five year program at RIT which allotted a full year for coop experience. A five year program at RIT which allotted a full year for coop experience.
+							A wonderful five year program which allowed me to spend over a years worth of time at co-ops and internships.
+							Attained a minor in mathematics, and was able to take fun interesting courses like <i>Game Theory</i>, <i>Cryptography</i>, and <i>Computer Graphics</i>.
 						</ResumeCard>
 					</Grid>
 				</Grid>
@@ -67,12 +65,36 @@ function Resume(props) {
 						<ResumeCard 
 							title="Ellucian"
 							subtitle="Associate Software Developer"
-							date="August 2017 - Current"
+							date="July 2017 - Current"
 							caption="">
-							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
-							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
-							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
-							A place that I work and write computer code. A place that I work and write computer code. A place that I work and write computer code.
+							Full stack development using primarily Node.js, SQL, and React to build highly available and scalable applications. I've worked
+							across several teams and received recognitions for my cross-team efforts. I've had the opportunity to mentor interns during the summer, which has
+							proven to be very rewarding.
+						</ResumeCard>
+						<ResumeCard 
+							title="Ellucian"
+							subtitle="Software Developer Intern"
+							date="May 2016 - August 2016"
+							caption="">
+							As an intern, I was given the freedom to create an initial implementation for a product that would help customers integrate with other Ellucian
+							products. We primarily programmed in Node.js for our backend, and used jQuery and CSS for the front end. This was one of the first times I'd worked directly with
+							remote employees, and it taught me quite a bit about communication within teams.
+						</ResumeCard>
+						<ResumeCard 
+							title="Lenel"
+							subtitle="Automation Engineer"
+							date="May 2015 - December 2015"
+							caption="">
+							At Lenel, I had the responsibility of designing and producint automated test cases for several of Lenel's products. I caught and verified bugs using regression tests,
+							and worked in an agile development for the first time.
+						</ResumeCard>
+						<ResumeCard 
+							title="Rochester Software Associates"
+							subtitle="Quality Assurance"
+							date="May 2014 - December 2014"
+							caption="">
+							At RSA, I was in charge of creating and maintaining test cases for <a target="_blank" rel="noopener noreferrer" href="https://www.rocsoft.com/QDirect">QDirect</a>
+							product based on feature specifications. I learned how to create useful test cases and bug reports.
 						</ResumeCard>
 					</Grid>
 				</Grid>
