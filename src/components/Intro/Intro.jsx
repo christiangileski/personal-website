@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -135,58 +134,55 @@ class Intro extends React.Component {
 		const timeout = 1000;
 
 		return (
-			<React.Fragment>
-				<CssBaseline />
-				<main>
-					{/* Hero unit */}
-					<Parallax bgClassName={classes.parallaxBg} strength={400} bgImage={'./intro-bg.jpg'}>
-						<div className={classes.heroUnit}>
-							<div className={classes.heroContent}>
-								<FadeOnStart timeout={timeout} delay={0*fadeDelayUnit}>
-									<Typography align="center" className={classes.greeting} gutterBottom>
-										Hello.
+			<main>
+				{/* Hero unit */}
+				<Parallax bgClassName={classes.parallaxBg} strength={400} bgImage={'./intro-bg.jpg'}>
+					<div className={classes.heroUnit}>
+						<div className={classes.heroContent}>
+							<FadeOnStart timeout={timeout} delay={0*fadeDelayUnit}>
+								<Typography align="center" className={classes.greeting} gutterBottom>
+									Hello.
+								</Typography>
+							</FadeOnStart>
+							<FadeOnStart timeout={timeout} delay={1*fadeDelayUnit}>
+								<Typography variant="display3" align="center" className={classes.name} gutterBottom>
+									I'm Clay Benson
+								</Typography>
+							</FadeOnStart>
+							<FadeOnStart timeout={timeout} delay={2*fadeDelayUnit}>
+								<div>
+									<Typography variant="title" align="center" className={classes.intro} paragraph>
+										I'm a Software Developer.
 									</Typography>
-								</FadeOnStart>
-								<FadeOnStart timeout={timeout} delay={1*fadeDelayUnit}>
-									<Typography variant="display3" align="center" className={classes.name} gutterBottom>
-										I'm Clay Benson
+									<Typography variant="title" align="center" className={classes.intro} paragraph>
+										I enjoy breaking and fixing things.
 									</Typography>
-								</FadeOnStart>
-								<FadeOnStart timeout={timeout} delay={2*fadeDelayUnit}>
-									<div>
-										<Typography variant="title" align="center" className={classes.intro} paragraph>
-											I'm a Software Developer.
-										</Typography>
-										<Typography variant="title" align="center" className={classes.intro} paragraph>
-											I enjoy breaking and fixing things.
-										</Typography>
-									</div>
-								</FadeOnStart>
-								<FadeOnStart timeout={timeout} delay={3*fadeDelayUnit}>
-									<div className={classes.heroButtons}>
-										<Grid container spacing={16} justify="center">
-											<Grid item>
-												<AnchorLink className={classes.noAnchorStyle} href='#about'>
-													<IconButton className={classes.button} aria-label="Delete">
-														<ArrowDropDown />
-													</IconButton>
-												</AnchorLink>
-											</Grid>
+								</div>
+							</FadeOnStart>
+							<FadeOnStart timeout={timeout} delay={3*fadeDelayUnit}>
+								<div className={classes.heroButtons}>
+									<Grid container spacing={16} justify="center">
+										<Grid item>
+											<AnchorLink className={classes.noAnchorStyle} href='#about'>
+												<IconButton className={classes.button} aria-label="Delete">
+													<ArrowDropDown />
+												</IconButton>
+											</AnchorLink>
 										</Grid>
-									</div>
-								</FadeOnStart>
-							</div>
-							<FadeOnStart timeout={timeout} delay={4*fadeDelayUnit}>
-								<div className={classes.iconSet}>
-									<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
-									<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
-									<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
+									</Grid>
 								</div>
 							</FadeOnStart>
 						</div>
-					</Parallax>
-				</main>
-			</React.Fragment>
+						<FadeOnStart timeout={timeout} delay={4*fadeDelayUnit}>
+							<div className={classes.iconSet}>
+								<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
+								<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
+								<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
+							</div>
+						</FadeOnStart>
+					</div>
+				</Parallax>
+			</main>
 		);
 	}
 }

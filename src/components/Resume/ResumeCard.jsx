@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -43,33 +42,30 @@ function ResumeCard(props) {
 	} = props;
 
 	return (
-		<React.Fragment>
-			<CssBaseline />
-			<div className={classes.resumePaper}>
-				<Typography className={classes.title} color="textPrimary" paragraph variant="headline" >
-					{title}
+		<div className={classes.resumePaper}>
+			<Typography className={classes.title} color="textPrimary" paragraph variant="headline" >
+				{title}
+			</Typography>
+			<Typography color="textSecondary" className={classes.information} variant="title" >
+				{subtitle}
+			</Typography>
+			<Hidden xsDown>
+				<Typography color="textSecondary" className={classNames(classes.information, classes.bullet)} paragraph variant="subheading" >
+					•
 				</Typography>
-				<Typography color="textSecondary" className={classes.information} variant="title" >
-					{subtitle}
+			</Hidden>
+			<Typography color="textSecondary" className={classes.information} paragraph  variant="subheading" >
+				{date}
+			</Typography>
+			<div className={classes.content}>
+				<Typography color="textPrimary" paragraph variant="body1" >
+					{children}
 				</Typography>
-				<Hidden xsDown>
-					<Typography color="textSecondary" className={classNames(classes.information, classes.bullet)} paragraph variant="subheading" >
-						•
-					</Typography>
-				</Hidden>
-				<Typography color="textSecondary" className={classes.information} paragraph  variant="subheading" >
-					{date}
+				<Typography variant="caption" >
+					{caption}
 				</Typography>
-				<div className={classes.content}>
-					<Typography color="textPrimary" paragraph variant="body1" >
-						{children}
-					</Typography>
-					<Typography variant="caption" >
-						{caption}
-					</Typography>
-				</div>
 			</div>
-		</React.Fragment>
+		</div>
 	);
 }
 

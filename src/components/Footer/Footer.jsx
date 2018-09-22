@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -15,19 +14,14 @@ function Footer(props) {
 	const { classes } = props;
 
 	return (
-		<React.Fragment>
-			<CssBaseline />
-			{/* Footer */}
-			<footer className={classes.footer}>
-				<Typography variant="title" align="center" gutterBottom>
-					Footer
-				</Typography>
-				<Typography variant="subheading" align="center" color="textSecondary" component="p">
-					Something here to give the footer a purpose!
-				</Typography>
-			</footer>
-			{/* End footer */}
-		</React.Fragment>
+		<footer className={classes.footer}>
+			<Typography variant="title" align="center" gutterBottom>
+				Footer
+			</Typography>
+			<Typography variant="subheading" align="center" color="textSecondary" component="p">
+				Something here to give the footer a purpose!
+			</Typography>
+		</footer>
 	);
 }
 
