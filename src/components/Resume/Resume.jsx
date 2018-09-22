@@ -5,6 +5,7 @@ import ResumeCard from './ResumeCard';
 import { Typography, Grid } from '@material-ui/core';
 
 const styles = (theme) => {
+	console.log('theme', theme);
 	return {
 		layout: {
 			width: 'auto',
@@ -28,7 +29,7 @@ const styles = (theme) => {
 			marginBottom: theme.spacing.unit * 2,
 		},
 		link: {
-			color: theme.palette.primary.main,
+			color: theme.palette.link,
 		},
 	};
 }
