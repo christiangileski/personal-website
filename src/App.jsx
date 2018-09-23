@@ -13,13 +13,13 @@ class App extends Component {
 				{(context) => {
 					const theme = createMuiTheme({
 						palette: {
-							type: context.isLight ? 'light' : 'dark',
+							type: context.isDark ? 'dark' : 'light',
 							primary: {
 								main: '#ffb300',
 							},
 						},
 					});
-					theme.palette.link = context.isLight ? theme.palette.primary.dark : theme.palette.primary.main;
+					theme.palette.darkAndLight = context.isDark ? theme.palette.primary.main : theme.palette.primary.dark;
 					return (
 						<MuiThemeProvider theme={theme}>
 							<CssBaseline />

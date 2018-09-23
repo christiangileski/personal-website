@@ -7,7 +7,7 @@ class Provider extends React.Component {
 		super(props);
 
 		this.state = {
-			isLight: true,
+			isDark: true,
 		}
 
 		this.toggleTheme = this.toggleTheme.bind(this);
@@ -15,7 +15,7 @@ class Provider extends React.Component {
 
 	toggleTheme() {
 		this.setState({
-			isLight: !this.state.isLight,
+			isDark: !this.state.isDark,
 		});
 	}
 
