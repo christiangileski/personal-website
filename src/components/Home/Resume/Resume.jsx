@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import ResumeCard from './ResumeCard';
 import { Typography, Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Consumer } from '../../Context';
+import { Consumer } from '../../../Context';
 import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
 import Button from '@material-ui/core/Button';
 

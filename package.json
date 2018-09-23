@@ -12,9 +12,12 @@
     "@material-ui/icons": "^3.0.1",
     "react": "^16.4.2",
     "react-anchor-link-smooth-scroll": "^1.0.11",
+    "react-color": "^2.14.1",
     "react-dom": "^16.4.2",
     "react-parallax": "^1.8.0",
-    "react-scripts": "1.1.5"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "socket.io-client": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

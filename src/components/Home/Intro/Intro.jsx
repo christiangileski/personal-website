@@ -10,7 +10,7 @@ import { faGithub, faTwitch, faLinkedin } from '@fortawesome/free-brands-svg-ico
 import IconButton from '@material-ui/core/IconButton';
 import { ArrowDropDown } from '@material-ui/icons'
 import { Parallax } from 'react-parallax';
-import FadeOnStart from '../UtilComponents/FadeOnStart';
+import FadeOnStart from '../../UtilComponents/FadeOnStart';
 
 // import './Intro.css'
 
@@ -136,7 +136,7 @@ class Intro extends React.Component {
 		return (
 			<main>
 				{/* Hero unit */}
-				<Parallax blur={{min: -10, max: 10}} bgClassName={classes.parallaxBg} strength={400} bgImage={'./intro-bg.jpg'}>
+				<Parallax blur={{min: -10, max: 10}} bgClassName={classes.parallaxBg} strength={400} bgImage={'/intro-bg.jpg'}>
 					<div className={classes.heroUnit}>
 						<div className={classes.heroContent}>
 							<FadeOnStart timeout={timeout} delay={0 * fadeDelayUnit}>
