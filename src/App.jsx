@@ -18,6 +18,7 @@ class App extends Component {
 							},
 						},
 					});
+					theme.palette.darkAndLight = context.isDark ? theme.palette.primary.main : theme.palette.primary.dark;
 					return (
 						<MuiThemeProvider theme={theme}>
 							<CssBaseline />
