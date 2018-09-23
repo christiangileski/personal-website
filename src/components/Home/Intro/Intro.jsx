@@ -108,7 +108,6 @@ const styles = theme => ({
 		},
 	},
 	heroContent: {
-		margin: '0 auto',
 		[theme.breakpoints.down('sm')]: {
 			maxWidth: '18rem',
 		},

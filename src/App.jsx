@@ -1,29 +1,44 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home'
+import LED from './components/LED/LED'
+import { createMuiTheme, MuiThemeProvider, CssBaseline } from '@material-ui/core';
+import { Consumer } from './Context';
 
 class App extends Component {
 	render() {
 		return (
-			<Router>
-				<Switch>
-					<Route exact path='/' component={Home} />
-					<Route exact path='/led' component={()=>{
-						return (
-							<div>Welcome to my LED page!</div>
-						);
-					}} />
-					<Route status={404} component={() => {
-						return (
-							<div>
-								<div><pre>Page Not Found</pre></div>
-								{/* <div><a href="javascript:history.back();">Go Back</a></div> */}
-								<div><a href="/">Go Home</a></div>
-							</div>
-						);
-					}} />
-				</Switch>
-			</Router>
+			<Consumer>
+				{(context) => {
+					const theme = createMuiTheme({
+						palette: {
+							type: context.isDark ? 'dark' : 'light',
+							primary: {
+								main: '#ffb300',
+							},
+						},
+					});
+					return (
+						<MuiThemeProvider theme={theme}>
+							<CssBaseline />
+							<Router>
+								<Switch>
+									<Route exact path='/' component={Home} />
+									<Route exact path='/led' component={LED} />
+									<Route status={404} component={() => {
+										return (
+											<div>
+												<div><pre>Page Not Found</pre></div>
+												<div><a href="/">Go Home</a></div>
+											</div>
+										);
+									}} />
+								</Switch>
+							</Router>
+						</MuiThemeProvider>
+					);
+				}}
+			</Consumer>
 		);
 	}
 }
