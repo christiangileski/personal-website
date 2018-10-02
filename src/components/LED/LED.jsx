@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { SketchPicker } from 'react-color';
 import io from 'socket.io-client';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, Grid, Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLockOpen, faLock } from '@fortawesome/free-solid-svg-icons'
+import LockModal from './LockModal';
 
 const styles = theme => ({
 	controlsContainer: {
@@ -38,14 +39,11 @@ class LED extends React.Component {
 			},
 			locked: false,
 			lockModalOpen: false,
-			lockPassword: '',
 		};
 
 		this.onColorClicked = this.onColorClicked.bind(this);
 		this.onLockCancel = this.onLockCancel.bind(this);
 		this.onLockSubmit = this.onLockSubmit.bind(this);
-		this.onLockPasswordChange = this.onLockPasswordChange.bind(this);
-		this.onLockKeyPressed = this.onLockKeyPressed.bind(this);
 	}
 
 	onColorClicked({rgb}) {
@@ -69,57 +67,24 @@ class LED extends React.Component {
 	onLockCancel() {
 		this.setState({
 			lockModalOpen: false,
-			lockPassword: '',
 		});
 	}
 
-	onLockSubmit() {
-		this.socket.emit('toggle lock', this.state.lockPassword);
-		this.onLockCancel();
-	}
-
-	onLockPasswordChange(e) {
+	onLockSubmit(password) {
+		this.socket.emit('toggle lock', password);
 		this.setState({
-			lockPassword: e.target.value,
+			lockModalOpen: false,
 		});
-	}
-
-	onLockKeyPressed(e) {
-		if (e.key.toLowerCase() === 'enter') {
-			this.onLockSubmit();
-		}
 	}
 
 	render() {
 		const { classes } = this.props;
 		const { selectedColor, locked, lockModalOpen } = this.state;
-		const boxShadowStyle = { boxShadow: `0 0 4rem 0.5rem rgb(${selectedColor.r},${selectedColor.g},${selectedColor.b})`}
+		const boxShadowStyle = { boxShadow: `0 0 4rem 1.3rem rgb(${selectedColor.r},${selectedColor.g},${selectedColor.b})`}
 
 		return (
 			<React.Fragment>
-				{/* Lock Dialog */}
-				<Dialog	open={lockModalOpen} onClose={this.onLockCancel}>
-					<DialogTitle>Enter password to lock</DialogTitle>
-					<DialogContent>
-						<TextField
-							onKeyPress={this.onLockKeyPressed}
-							onChange={this.onLockPasswordChange}
-							autoFocus
-							margin="dense"
-							label="Password"
-							type="password"
-							fullWidth
-						/>
-					</DialogContent>
-					<DialogActions>
-						<Button onClick={this.onLockCancel} color="primary">
-							Cancel
-						</Button>
-						<Button onClick={this.onLockSubmit} color="primary">
-							Submit
-						</Button>
-					</DialogActions>
-				</Dialog>
+				<LockModal open={lockModalOpen} onCancel={this.onLockCancel} onSubmit={this.onLockSubmit}/>
 
 				{/* Main Body */}
 				<div className={classes.controlsContainer}>
@@ -134,7 +99,7 @@ class LED extends React.Component {
 							<Button className={classes.button} onClick={() => { this.setState({lockModalOpen: true}) }} color="primary" mini variant="fab">
 								<FontAwesomeIcon icon={locked ? faLock : faLockOpen} />
 							</Button>
-							<Button className={classes.button} color="primary" variant="contained" onClick={() => { this.onColorClicked({ rgb: { r: 0, g: 0, b: 255 } }) }}>Make it Blue!</Button>
+							<Button disabled={locked} className={classes.button} color="primary" variant="contained" onClick={() => { this.onColorClicked({ rgb: { r: 0, g: 0, b: 255 } }) }}>Make it Blue!</Button>
 						</Grid>
 					</Grid>
 				</div>
