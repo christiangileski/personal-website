@@ -22,17 +22,17 @@ class LockModal extends React.Component {
 	}
 
 	onCancel() {
+		this.props.onCancel();
 		this.setState({
 			password: '',
 		});
-		this.props.onCancel();
 	}
 
 	onSubmit() {
+		this.props.onSubmit(this.state.password);
 		this.setState({
 			password: '',
 		});
-		this.props.onSubmit(this.state.password);
 	}
 
 	onPasswordChange(e) {

@@ -7,6 +7,8 @@ import { Button, Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLockOpen, faLock } from '@fortawesome/free-solid-svg-icons'
 import LockModal from './LockModal';
+import RainbowModal from './RainbowModal';
+import PulseModal from './PulseModal';
 
 const styles = theme => ({
 	controlsContainer: {
@@ -32,6 +34,7 @@ class LED extends React.Component {
 		// this.socket = io(`${window.location.protocol}//${window.location.hostname}:8333/led`, { secure: true });
 		this.socket = io(`${window.location.protocol}//claybenson.me:8333/led`, { secure: true });
 		this.state = {
+			currentPattern: '',
 			selectedColor: {
 				r: 0,
 				g: 0,
@@ -39,11 +42,17 @@ class LED extends React.Component {
 			},
 			locked: false,
 			lockModalOpen: false,
+			rainbowModalOpen: false,
+			pulseModalOpen: false,
 		};
 
 		this.onColorClicked = this.onColorClicked.bind(this);
 		this.onLockCancel = this.onLockCancel.bind(this);
 		this.onLockSubmit = this.onLockSubmit.bind(this);
+		this.onRainbowCancel = this.onRainbowCancel.bind(this);
+		this.onRainbowSubmit = this.onRainbowSubmit.bind(this);
+		this.onPulseCancel = this.onPulseCancel.bind(this);
+		this.onPulseSubmit = this.onPulseSubmit.bind(this);
 	}
 
 	onColorClicked({rgb}) {
@@ -62,6 +71,18 @@ class LED extends React.Component {
 				locked: locked
 			});
 		});
+
+		this.socket.on('pattern start', (patternName) => {
+			this.setState({
+				currentPattern: patternName
+			});
+		});
+
+		this.socket.on('pattern stop', () => {
+			this.setState({
+				currentPattern: ''
+			});
+		});
 	}
 
 	onLockCancel() {
@@ -77,14 +98,50 @@ class LED extends React.Component {
 		});
 	}
 
+	onRainbowCancel() {
+		this.setState({
+			rainbowModalOpen: false,
+		});
+	}
+
+	onRainbowSubmit(speed, brightness) {
+		this.socket.emit('pattern start', {
+			speed: speed,
+			brightnessPercent: brightness,
+			patternName: 'rainbow'
+		});
+		this.setState({
+			rainbowModalOpen: false,
+		});
+	}
+
+	onPulseCancel() {
+		this.setState({
+			pulseModalOpen: false,
+		});
+	}
+
+	onPulseSubmit(speed, color) {
+		this.socket.emit('pattern start', {
+			speed: speed,
+			color: color,
+			patternName: 'pulse'
+		});
+		this.setState({
+			pulseModalOpen: false,
+		});
+	}
+
 	render() {
 		const { classes } = this.props;
-		const { selectedColor, locked, lockModalOpen } = this.state;
+		const { currentPattern, selectedColor, locked, lockModalOpen, rainbowModalOpen, pulseModalOpen } = this.state;
 		const boxShadowStyle = { boxShadow: `0 0 4rem 1.3rem rgb(${selectedColor.r},${selectedColor.g},${selectedColor.b})`}
 
 		return (
 			<React.Fragment>
 				<LockModal open={lockModalOpen} onCancel={this.onLockCancel} onSubmit={this.onLockSubmit}/>
+				<RainbowModal open={rainbowModalOpen} onCancel={this.onRainbowCancel} onSubmit={this.onRainbowSubmit}/>
+				<PulseModal open={pulseModalOpen} onCancel={this.onPulseCancel} onSubmit={this.onPulseSubmit}/>
 
 				{/* Main Body */}
 				<div className={classes.controlsContainer}>
@@ -99,7 +156,8 @@ class LED extends React.Component {
 							<Button className={classes.button} onClick={() => { this.setState({lockModalOpen: true}) }} color="primary" mini variant="fab">
 								<FontAwesomeIcon icon={locked ? faLock : faLockOpen} />
 							</Button>
-							<Button disabled={locked} className={classes.button} color="primary" variant="contained" onClick={() => { this.onColorClicked({ rgb: { r: 0, g: 0, b: 255 } }) }}>Make it Blue!</Button>
+							<Button disabled={locked || currentPattern === "rainbow"} className={classes.button} color="primary" variant="contained" onClick={() => { this.setState({rainbowModalOpen: true}) }}>Rainbow</Button>
+							<Button disabled={locked || currentPattern === "pulse"} className={classes.button} color="primary" variant="contained" onClick={() => { this.setState({pulseModalOpen: true}) }}>Pulse</Button>
 						</Grid>
 					</Grid>
 				</div>
