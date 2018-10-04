@@ -9,6 +9,7 @@ import { faLockOpen, faLock } from '@fortawesome/free-solid-svg-icons'
 import LockModal from './LockModal';
 import RainbowModal from './RainbowModal';
 import PulseModal from './PulseModal';
+import CustomModal from './CustomModal';
 
 const styles = theme => ({
 	controlsContainer: {
@@ -44,6 +45,7 @@ class LED extends React.Component {
 			lockModalOpen: false,
 			rainbowModalOpen: false,
 			pulseModalOpen: false,
+			customModalOpen: false,
 		};
 
 		this.onColorClicked = this.onColorClicked.bind(this);
@@ -53,6 +55,8 @@ class LED extends React.Component {
 		this.onRainbowSubmit = this.onRainbowSubmit.bind(this);
 		this.onPulseCancel = this.onPulseCancel.bind(this);
 		this.onPulseSubmit = this.onPulseSubmit.bind(this);
+		this.onCustomCancel = this.onCustomCancel.bind(this);
+		this.onCustomSubmit = this.onCustomSubmit.bind(this);
 	}
 
 	onColorClicked({rgb}) {
@@ -108,7 +112,7 @@ class LED extends React.Component {
 		this.socket.emit('pattern start', {
 			speed: speed,
 			brightnessPercent: brightness,
-			patternName: 'rainbow'
+			patternName: 'rainbow',
 		});
 		this.setState({
 			rainbowModalOpen: false,
@@ -125,16 +129,34 @@ class LED extends React.Component {
 		this.socket.emit('pattern start', {
 			speed: speed,
 			color: color,
-			patternName: 'pulse'
+			patternName: 'pulse',
 		});
 		this.setState({
 			pulseModalOpen: false,
 		});
 	}
 
+	onCustomCancel() {
+		this.setState({
+			customModalOpen: false,
+		});
+	}
+
+	onCustomSubmit(speed, colors, smooth) {
+		this.socket.emit('pattern start', {
+			colors: colors,
+			smooth: smooth,
+			speed: speed,
+			patternName: 'custom',
+		});
+		this.setState({
+			customModalOpen: false,
+		});
+	}
+
 	render() {
 		const { classes } = this.props;
-		const { currentPattern, selectedColor, locked, lockModalOpen, rainbowModalOpen, pulseModalOpen } = this.state;
+		const { currentPattern, selectedColor, locked, lockModalOpen, rainbowModalOpen, pulseModalOpen, customModalOpen } = this.state;
 		const boxShadowStyle = { boxShadow: `0 0 4rem 1.3rem rgb(${selectedColor.r},${selectedColor.g},${selectedColor.b})`}
 
 		return (
@@ -142,6 +164,7 @@ class LED extends React.Component {
 				<LockModal open={lockModalOpen} onCancel={this.onLockCancel} onSubmit={this.onLockSubmit}/>
 				<RainbowModal open={rainbowModalOpen} onCancel={this.onRainbowCancel} onSubmit={this.onRainbowSubmit}/>
 				<PulseModal open={pulseModalOpen} onCancel={this.onPulseCancel} onSubmit={this.onPulseSubmit}/>
+				<CustomModal open={customModalOpen} onCancel={this.onCustomCancel} onSubmit={this.onCustomSubmit}/>
 
 				{/* Main Body */}
 				<div className={classes.controlsContainer}>
@@ -158,6 +181,7 @@ class LED extends React.Component {
 							</Button>
 							<Button disabled={locked || currentPattern === "rainbow"} className={classes.button} color="primary" variant="contained" onClick={() => { this.setState({rainbowModalOpen: true}) }}>Rainbow</Button>
 							<Button disabled={locked || currentPattern === "pulse"} className={classes.button} color="primary" variant="contained" onClick={() => { this.setState({pulseModalOpen: true}) }}>Pulse</Button>
+							<Button disabled={locked || currentPattern === "custom"} className={classes.button} color="primary" variant="contained" onClick={() => { this.setState({customModalOpen: true}) }}>Custom</Button>
 						</Grid>
 					</Grid>
 				</div>

@@ -8,6 +8,10 @@ import Slider from "@material-ui/lab/Slider";
 const styles = theme => ({
 	picker: {
 		margin: 'auto',
+		[theme.breakpoints.down('xs')]: {
+			width: '160px !important',
+			touchAction: 'none',
+		},
 	},
 });
 
@@ -81,12 +85,13 @@ class PulseModal extends React.Component {
 						value={speed}
 						onChange={this.onSpeedChanged}
 					/>
-					<ChromePicker
-						color={color}
-						onChangeComplete={this.onColorChanged}
-						className={classes.picker}
-						disableAlpha={true}/>
 				</DialogContent>
+				<ChromePicker
+					color={color}
+					onChangeComplete={this.onColorChanged}
+					className={classes.picker}
+					disableAlpha={true}
+				/>
 				<DialogActions>
 					<Button onClick={this.onCancel} color="primary">
 						Cancel

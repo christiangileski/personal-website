@@ -57,7 +57,7 @@ function Resume(props) {
 								<Grid className={classes.cardCategory} item xs={12} sm={3}>
 									<Typography className={classes.cardCategoryLabel} variant="headline">
 										Education
-							</Typography>
+									</Typography>
 								</Grid>
 								<Grid item xs={12} sm={9}>
 									<ResumeCard
@@ -74,7 +74,7 @@ function Resume(props) {
 								<Grid className={classes.cardCategory} item xs={12} sm={3}>
 									<Typography className={classes.cardCategoryLabel} variant="headline">
 										Work
-							</Typography>
+									</Typography>
 								</Grid>
 								<Grid item xs={12} sm={9}>
 									<ResumeCard
@@ -85,7 +85,7 @@ function Resume(props) {
 										Full stack development using primarily Node.js, SQL, and React to build highly available and scalable applications. I've worked
 										across several teams and received recognitions for my cross-team efforts. I've had the opportunity to mentor interns during the summer, which has
 										proven to be very rewarding.
-							</ResumeCard>
+									</ResumeCard>
 									<ResumeCard
 										title="Ellucian"
 										subtitle="Software Developer Intern"
@@ -94,7 +94,7 @@ function Resume(props) {
 										As an intern, I was given the freedom to create an initial implementation for a product that would help customers integrate with other Ellucian
 										products. We primarily programmed in Node.js for our backend, and used jQuery and CSS for the front end. This was one of the first times I'd worked directly with
 										remote employees, and it taught me quite a bit about communication within teams.
-							</ResumeCard>
+									</ResumeCard>
 									<ResumeCard
 										title="Lenel"
 										subtitle="Automation Engineer"
@@ -102,7 +102,7 @@ function Resume(props) {
 										caption="">
 										At Lenel, I had the responsibility of designing and producint automated test cases for several of Lenel's products. I caught and verified bugs using regression tests,
 										and worked in an agile development for the first time.
-							</ResumeCard>
+									</ResumeCard>
 									<ResumeCard
 										title="Rochester Software Associates"
 										subtitle="Quality Assurance"
@@ -110,7 +110,7 @@ function Resume(props) {
 										caption="">
 										At RSA, I was in charge of creating and maintaining test cases for their <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://www.rocsoft.com/QDirect">QDirect</a> product
 										based on feature specifications. I learned how to create useful test cases and bug reports.
-							</ResumeCard>
+									</ResumeCard>
 								</Grid>
 							</Grid>
 						</div>
