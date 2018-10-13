@@ -3,6 +3,11 @@ require('dotenv').config();
 const ledState = require('./led-state');
 
 (async () => {
+    if (!process.env.LOCK_PASSWORD) {
+        console.error("Missing LOCK_PASSWORD env variable");
+        process.exit(1);
+    }
+
 	const server = new Hapi.Server({
 		port: 8333,
 	});
