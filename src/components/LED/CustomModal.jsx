@@ -48,6 +48,7 @@ class CustomModal extends React.Component {
 
 		this.onCancel = this.onCancel.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
+		this.onSubmitSmooth = this.onSubmitSmooth.bind(this);
 		this.onSpeedChanged = this.onSpeedChanged.bind(this);
 		this.onColorChanged = this.onColorChanged.bind(this);
 		this.resetColors = this.resetColors.bind(this);
