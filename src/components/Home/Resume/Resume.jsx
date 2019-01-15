@@ -79,7 +79,7 @@ function Resume(props) {
 								<Grid item xs={12} sm={9}>
 									<ResumeCard
 										title="Ellucian"
-										subtitle="Associate Software Developer"
+										subtitle="Software Developer"
 										date="July 2017 - Current"
 										caption="">
 										Full stack development using primarily Node.js, SQL, and React to build highly available and scalable applications. I've worked
