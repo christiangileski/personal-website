@@ -8,7 +8,7 @@ class Provider extends React.Component {
 
 		this.state = {
 			isDark: true,
-		}
+		};
 
 		this.toggleTheme = this.toggleTheme.bind(this);
 	}
@@ -27,7 +27,7 @@ class Provider extends React.Component {
 			}}>
 				{this.props.children}
 			</Context.Provider>
-		)
+		);
 	}
 }
 
@@ -36,4 +36,4 @@ const Consumer = Context.Consumer;
 export {
 	Provider,
 	Consumer,
-}
+};

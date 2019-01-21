@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ResumeCard from './ResumeCard';
 import { Typography, Grid } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Consumer } from '../../../Context';
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import Button from '@material-ui/core/Button';
 
 const styles = (theme) => {
@@ -30,6 +30,7 @@ const styles = (theme) => {
 			borderBottom: `3px solid ${theme.palette.darkAndLight}`,
 			display: 'inline-block',
 			marginBottom: theme.spacing.unit * 2,
+			color: theme.palette.darkAndWhite
 		},
 		link: {
 			color: theme.palette.darkAndLight,
@@ -37,9 +38,14 @@ const styles = (theme) => {
 		lightIcon: {
 			margin: theme.spacing.unit * 2,
 			float: 'right',
+			backgroundColor: theme.palette.darkAndLight,
+			color: '#FFFFFF',
+			'&:hover': {
+				backgroundColor: theme.palette.hoverDarkAndLight,
+			},
 		},
 	};
-}
+};
 
 function Resume(props) {
 	const { classes } = props;
@@ -49,7 +55,7 @@ function Resume(props) {
 			{(context) => {
 				return (
 					<React.Fragment>
-						<Button className={classes.lightIcon} mini color="primary" variant="fab" onClick={context.toggleTheme}>
+						<Button className={classes.lightIcon} mini variant="fab" onClick={context.toggleTheme}>
 							<FontAwesomeIcon icon={faLightbulb} />
 						</Button>
 						<div id="about" className={classes.layout}>
@@ -66,8 +72,8 @@ function Resume(props) {
 										date="May 2017"
 										caption="Related coursework: Analysis of Algorithms, Discrete Mathematics">
 										A wonderful five year program which allowed me to spend over a years worth of time at co-ops and internships.
-								Attained a minor in mathematics, and was able to take fun interesting courses like <i>Game Theory</i>, <i>Cryptography</i>, and <i>Computer Graphics</i>.
-							</ResumeCard>
+										Attained a minor in mathematics, and was able to take fun interesting courses like <i>Game Theory</i>, <i>Cryptography</i>, and <i>Computer Graphics</i>.
+									</ResumeCard>
 								</Grid>
 							</Grid>
 							<Grid container direction="row">

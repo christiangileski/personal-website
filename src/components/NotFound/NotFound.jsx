@@ -27,7 +27,7 @@ class NotFound extends React.Component {
 						Page not found.
 					</Typography>
 					<Typography align="center" variant="headline">
-						Would you like to go to the <Link className={classes.link} to="/">Homepage</Link>?
+						Would you like to go to the <Link className={classes.link} to="/">homepage</Link>?
 					</Typography>
 				</div>
 			</div>

@@ -5,14 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitch, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import IconButton from '@material-ui/core/IconButton';
-import { ArrowDropDown } from '@material-ui/icons'
+import { ArrowDropDown } from '@material-ui/icons';
 import { Parallax } from 'react-parallax';
 import FadeOnStart from '../../UtilComponents/FadeOnStart';
-
-// import './Intro.css'
 
 const styles = theme => ({
 	greeting: {
@@ -54,9 +52,9 @@ const styles = theme => ({
 		},
 	},
 	button: {
-		color: theme.palette.primary.main,
+		color: theme.palette.primary.secondary,
 		// border: '1px solid rgba(255, 255, 0, 0.8)'
-		border: `1px solid ${theme.palette.primary.main}`
+		border: `1px solid ${theme.palette.primary.secondary}`
 	},
 	noAnchorStyle: {
 		textDecoration: 'none',
@@ -104,7 +102,7 @@ const styles = theme => ({
 		},
 		transition: 'color .3s linear',
 		'&:hover': {
-			color: theme.palette.primary.main,
+			color: theme.palette.primary.secondary,
 		},
 	},
 	heroContent: {
@@ -135,7 +133,7 @@ class Intro extends React.Component {
 		return (
 			<main>
 				{/* Hero unit */}
-				<Parallax blur={{min: -25, max: 40}} bgClassName={classes.parallaxBg} strength={400} bgImage={'/intro-bg.jpg'}>
+				<Parallax blur={{ min: -25, max: 40 }} bgClassName={classes.parallaxBg} strength={400} bgImage={'/intro-bg.jpg'}>
 					<div className={classes.heroUnit}>
 						<div className={classes.heroContent}>
 							<FadeOnStart timeout={timeout} delay={0 * fadeDelayUnit}>
@@ -145,7 +143,7 @@ class Intro extends React.Component {
 							</FadeOnStart>
 							<FadeOnStart timeout={timeout} delay={1 * fadeDelayUnit}>
 								<Typography variant="display3" align="center" className={classes.name} gutterBottom>
-									I'm Clay Benson
+									I'm Christian Gileski
 								</Typography>
 							</FadeOnStart>
 							<FadeOnStart timeout={timeout} delay={2 * fadeDelayUnit}>
@@ -154,7 +152,7 @@ class Intro extends React.Component {
 										I'm a Software Developer.
 									</Typography>
 									<Typography variant="title" align="center" className={classes.intro} paragraph>
-										I enjoy breaking and fixing things.
+										Welcome to my online profile.
 									</Typography>
 								</div>
 							</FadeOnStart>
@@ -174,9 +172,9 @@ class Intro extends React.Component {
 						</div>
 						<FadeOnStart timeout={timeout} delay={4 * fadeDelayUnit}>
 							<div className={classes.iconSet}>
-								<a href="https://github.com/ClayBenson94" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faGithub} /></a>
-								<a href="https://www.linkedin.com/in/claybenson94/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
-								<a href="https://www.twitch.tv/piercinggoblin" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faTwitch} /></a>
+								<a href="https://www.facebook.com/christian.gileski" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faFacebook} /></a>
+								<a href="https://www.linkedin.com/in/christiangileski/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faLinkedin} /></a>
+								<a href="https://www.instagram.com/christianryang" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className={classNames(classes.icon, 'clickable')} icon={faInstagram} /></a>
 							</div>
 						</FadeOnStart>
 					</div>

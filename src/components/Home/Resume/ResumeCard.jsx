@@ -15,6 +15,7 @@ const styles = theme => ({
 	},
 	title: {
 		fontWeight: 600,
+		color: theme.palette.darkAndWhite
 	},
 	information: {
 		display: 'inline-block',
@@ -29,6 +30,9 @@ const styles = theme => ({
 	content: {
 		textAlign: 'left',
 	},
+	children: {
+		color: theme.palette.darkAndWhite
+	}
 });
 
 function ResumeCard(props) {
@@ -43,7 +47,7 @@ function ResumeCard(props) {
 
 	return (
 		<div className={classes.resumePaper}>
-			<Typography className={classes.title} color="textPrimary" paragraph variant="headline" >
+			<Typography className={classes.title} paragraph variant="headline" >
 				{title}
 			</Typography>
 			<Typography color="textSecondary" className={classes.information} variant="title" >
@@ -54,11 +58,11 @@ function ResumeCard(props) {
 					•
 				</Typography>
 			</Hidden>
-			<Typography color="textSecondary" className={classes.information} paragraph  variant="subheading" >
+			<Typography color="textSecondary" className={classes.information} paragraph variant="subheading" >
 				{date}
 			</Typography>
 			<div className={classes.content}>
-				<Typography color="textPrimary" paragraph variant="body1" >
+				<Typography color="textPrimary" className={classes.children} paragraph variant="body1" >
 					{children}
 				</Typography>
 				<Typography variant="caption" >

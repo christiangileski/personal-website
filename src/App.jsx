@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home/Home'
-import LED from './components/LED/LED'
-import NotFound from './components/NotFound/NotFound'
+import Home from './components/Home/Home';
+import NotFound from './components/NotFound/NotFound';
 import { createMuiTheme, MuiThemeProvider, CssBaseline } from '@material-ui/core';
 import { Consumer } from './Context';
 
@@ -15,27 +14,23 @@ class App extends Component {
 						palette: {
 							type: context.isDark ? 'dark' : 'light',
 							primary: {
-								main: '#ffb300',
+								main: '#273a42',
+								secondary: '#c78389',
+								hoverMain: '#131c20',
+								hoverSecondary: '#b86168'
 							},
 						},
 					});
-					theme.palette.darkAndLight = context.isDark ? theme.palette.primary.main : theme.palette.primary.dark;
+					theme.palette.darkAndLight = context.isDark ? theme.palette.primary.secondary : theme.palette.primary.main;
+					theme.palette.hoverDarkAndLight = context.isDark ? theme.palette.primary.hoverSecondary : theme.palette.primary.hoverMain;
+					theme.palette.darkAndWhite = context.isDark ? '#ffffff' : theme.palette.primary.main;
 					return (
 						<MuiThemeProvider theme={theme}>
 							<CssBaseline />
 							<Router>
 								<Switch>
 									<Route exact path='/' component={Home} />
-									<Route exact path='/led' component={LED} />
-									<Route status={404} component={NotFound}/>
-									{/* <Route status={404} component={() => {
-										return (
-											<div>
-												<div><pre>Page Not Found at {window.location.href}</pre></div>
-												<div><a href="/">Go Home</a></div>
-											</div>
-										);
-									}} /> */}
+									<Route status={404} component={NotFound} />
 								</Switch>
 							</Router>
 						</MuiThemeProvider>
