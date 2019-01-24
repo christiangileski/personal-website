@@ -68,54 +68,78 @@ function Resume(props) {
 								<Grid item xs={12} sm={9}>
 									<ResumeCard
 										title="Rochester Institute of Technology"
-										subtitle="BS in Computer Science"
-										date="May 2017"
-										caption="Related coursework: Analysis of Algorithms, Discrete Mathematics">
-										A wonderful five year program which allowed me to spend over a years worth of time at co-ops and internships.
-										Attained a minor in mathematics, and was able to take fun interesting courses like <i>Game Theory</i>, <i>Cryptography</i>, and <i>Computer Graphics</i>.
+										subtitle="BS in Game Design & Development"
+										date="Fall 2012 - Fall 2016"
+										caption="Related coursework: Rich Media Web Application Development | Data Structures and Algorithms | Interation, Immersion & Media Interface">
+										An exciting four-year program which allowed me to grow as a developer both inside the classroom and outside during my tenure as a student, having been able to participate in diverse internships and co-ops.
+										In addition to game development and web application development, I studied <i>Communications</i> as a concentration, which allowed me to improve on versatile life skills in courses such as <i>Public Speaking</i> and <i>Technical Writing</i>.
 									</ResumeCard>
 								</Grid>
 							</Grid>
 							<Grid container direction="row">
 								<Grid className={classes.cardCategory} item xs={12} sm={3}>
 									<Typography className={classes.cardCategoryLabel} variant="headline">
-										Work
+										Career
 									</Typography>
 								</Grid>
 								<Grid item xs={12} sm={9}>
 									<ResumeCard
 										title="Ellucian"
 										subtitle="Software Developer"
-										date="July 2017 - Current"
+										date="February 2017 - Current"
 										caption="">
-										Full stack development using primarily Node.js, SQL, and React to build highly available and scalable applications. I've worked
-										across several teams and received recognitions for my cross-team efforts. I've had the opportunity to mentor interns during the summer, which has
-										proven to be very rewarding.
+										Full-stack development using primarily <i>Node.js</i>, <i>SQL</i>, and <i>React</i> to build highly available and scalable applications. I've worked across numerous teams and received recognitions for my cross-team efforts! In addition, I've had the opportunity to work directly with our user experience team in early adaptation and implementation of an <i>Ellucian-themed component library</i> using <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://material-ui.com/">Material-UI</a> components styled for re-use in many Ethos application interfaces. Prior to this, I had directly developed an internal React component library used by multiple teams for user interface implementation. I have also worked directly with <i>Jenkins</i>, <i>Amazon Web Services</i>, and our Ellucian Cloud Operations, Application Security, and Information Security teams for deploying and maintaining applications using <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://aws.amazon.com/ecs/">Amazon Elastic Container Service</a>.
 									</ResumeCard>
+									<ResumeCard
+										title="Viewpoint Construction Software"
+										subtitle="Software Development Intern"
+										date="August 2015 - January 2016"
+										caption="">
+										Contributed to the <i>Viewpoint Pricer</i> website using Javascript, HTML5, and CSS. This software acted as a financial tool to pair suppliers and contractors based on required supplies and competing contractor prices for those supplies. I also implemented and monitored <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://analytics.google.com/analytics/web/">Google Analytics</a> for the site during my internship. In addition, I contributed to the Viewpoint Estimation software, which is a codebase written in both C# and C++. This involved adding new features as well as updating existing legacy code, including writing several <i>C++/CLI wrappers</i> to use as reference in the C# legacy code.
+									</ResumeCard>
+									<ResumeCard
+										title="iD Tech Camps"
+										subtitle="Java Instructor"
+										date="May 2014 - August 2014"
+										caption="">
+										Java instruction for pre-teens of all experience levels during several one week-long sessions throughout the summer. However, most students attended numerous weeks, if not the entire summer, to sharpen their abilties as developers. I would tailor the pace of my instruction for each individual camper to keep them engaged while stimulating them and encouraging them to take on new challenges. Lessons varied from teaching the fundamentals to developing GUIs and creating simple games such as tic-tac-toe. I also acted as a camp counselor, supervising campers of all ages and playing recreational activities with such as kickball, whiffle ball, and computer games!
+									</ResumeCard>
+								</Grid>
+							</Grid>
+							<Grid container direction="row">
+								<Grid className={classes.cardCategory} item xs={12} sm={3}>
+									<Typography className={classes.cardCategoryLabel} variant="headline">
+										Activities and Honors
+									</Typography>
+								</Grid>
+								<Grid item xs={12} sm={9}>
 									<ResumeCard
 										title="Ellucian"
-										subtitle="Software Developer Intern"
-										date="May 2016 - August 2016"
+										subtitle="Ellucian Action Committee"
+										date="Septempber 2017 - Current"
 										caption="">
-										As an intern, I was given the freedom to create an initial implementation for a product that would help customers integrate with other Ellucian
-										products. We primarily programmed in Node.js for our backend, and used jQuery and CSS for the front end. This was one of the first times I'd worked directly with
-										remote employees, and it taught me quite a bit about communication within teams.
+										Our committee plans and organizes all company events which occur in the Rochester office. We organize events to promote office morale and show appreciation for the employees, as well as charitable events to give back to the community. Every winter, we have a donation drive for <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://www.uwrochester.org/">United Way</a>, where employees during the month of December can donate jackets, hats, gloves, socks, and other winter apparel. This committee also organizes the winter holiday party, other holiday events such as the Fourth of July or Halloween, the annual Thanksgiving potluck, the office car wash for charity, and much more.
 									</ResumeCard>
 									<ResumeCard
-										title="Lenel"
-										subtitle="Automation Engineer"
-										date="May 2015 - December 2015"
+										title="Rochester Institute of Technology"
+										subtitle="Dean's List Recognition"
+										date="Multiple semesters"
 										caption="">
-										At Lenel, I had the responsibility of designing and producint automated test cases for several of Lenel's products. I caught and verified bugs using regression tests,
-										and worked in an agile development for the first time.
+										Throughout my four years at RIT, I earned the recognition of being placed on the Dean's List many semesters. Full-time undergraduate students at Rochester Institute of Technology will be placed on the Dean's List if their term GPA is <i>greater than or equal to 3.40</i>.
 									</ResumeCard>
 									<ResumeCard
-										title="Rochester Software Associates"
-										subtitle="Quality Assurance"
-										date="May 2014 - December 2014"
+										title="GRADA"
+										subtitle="Ultimate Frisbee player"
+										date="Fall 2012 - Current"
 										caption="">
-										At RSA, I was in charge of creating and maintaining test cases for their <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://www.rocsoft.com/QDirect">QDirect</a> product
-										based on feature specifications. I learned how to create useful test cases and bug reports.
+										Since first attending RIT and joining the club ultimate frisbee team, I have been an active player in seasonal leagues for the <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://rocultimate.org/">Greater Rochester Area Disc Association</a>. I played competitively during my time at RIT for the club team, however I enjoy playing recreationally, and GRADA has given me fun opportunities to socialize, play in tournaments, and make new friends.
+									</ResumeCard>
+									<ResumeCard
+										title="Kickball League of Rochester"
+										subtitle="Recreational player"
+										date="Summer 2017 - Current"
+										caption="">
+										I started playing kickball in 2017 after a close friend of mine asked me to join his team with a number of his colleagues. It quickly became one of my favorite recreational pastimes to enjoy with my friends. In addition to loving the game, I enjoy the post-game celebrations each week at whichever local bar sponsors our team! It's a wonderful opportunity to spend time with my friends during the week, in addition to meeting new people and making new friends during the games.
 									</ResumeCard>
 								</Grid>
 							</Grid>

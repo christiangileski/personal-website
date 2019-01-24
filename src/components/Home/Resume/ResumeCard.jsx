@@ -14,7 +14,6 @@ const styles = theme => ({
 		},
 	},
 	title: {
-		fontWeight: 600,
 		color: theme.palette.darkAndWhite
 	},
 	information: {

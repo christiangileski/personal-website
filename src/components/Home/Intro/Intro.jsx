@@ -149,7 +149,7 @@ class Intro extends React.Component {
 							<FadeOnStart timeout={timeout} delay={2 * fadeDelayUnit}>
 								<div>
 									<Typography variant="title" align="center" className={classes.intro} paragraph>
-										I'm a Software Developer.
+										Software Developer | Gamer | Sports Enthusiast
 									</Typography>
 									<Typography variant="title" align="center" className={classes.intro} paragraph>
 										Welcome to my online profile.
