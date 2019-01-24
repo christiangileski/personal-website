@@ -102,7 +102,7 @@ function Resume(props) {
 										subtitle="Java Instructor"
 										date="May 2014 - August 2014"
 										caption="">
-										Java instruction for pre-teens of all experience levels during several one week-long sessions throughout the summer. However, most students attended numerous weeks, if not the entire summer, to sharpen their abilties as developers. I would tailor the pace of my instruction for each individual camper to keep them engaged while stimulating them and encouraging them to take on new challenges. Lessons varied from teaching the fundamentals to developing GUIs and creating simple games such as tic-tac-toe. I also acted as a camp counselor, supervising campers of all ages and playing recreational activities with such as kickball, whiffle ball, and computer games!
+										Java instruction for pre-teens of all experience levels during several one week-long sessions throughout the summer. However, most students attended numerous weeks, if not the entire summer, to sharpen their abilties as developers. I would tailor the pace of my instruction for each individual camper to keep them engaged while stimulating them and encouraging them to take on new challenges. Lessons varied from teaching the fundamentals to developing GUIs and creating simple games such as tic-tac-toe. I also acted as a camp counselor, supervising campers of all ages and playing recreational activities with such as kickball, wiffle ball, and computer games!
 									</ResumeCard>
 								</Grid>
 							</Grid>
