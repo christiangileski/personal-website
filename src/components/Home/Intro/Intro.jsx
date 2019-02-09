@@ -138,12 +138,12 @@ class Intro extends React.Component {
 						<div className={classes.heroContent}>
 							<FadeOnStart timeout={timeout} delay={0 * fadeDelayUnit}>
 								<Typography align="center" className={classes.greeting} gutterBottom>
-									Hello.
+									Hello World!
 								</Typography>
 							</FadeOnStart>
 							<FadeOnStart timeout={timeout} delay={1 * fadeDelayUnit}>
 								<Typography variant="display3" align="center" className={classes.name} gutterBottom>
-									I'm Christian Gileski
+									I'm Christian Gileski.
 								</Typography>
 							</FadeOnStart>
 							<FadeOnStart timeout={timeout} delay={2 * fadeDelayUnit}>

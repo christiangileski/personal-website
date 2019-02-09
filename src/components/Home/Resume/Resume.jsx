@@ -134,13 +134,6 @@ function Resume(props) {
 										caption="">
 										Since first attending RIT and joining the club ultimate frisbee team, I have been an active player in seasonal leagues for the <a className={classes.link} target="_blank" rel="noopener noreferrer" href="https://rocultimate.org/">Greater Rochester Area Disc Association</a>. I played competitively during my time at RIT for the club team, however I enjoy playing recreationally, and GRADA has given me fun opportunities to socialize, play in tournaments, and make new friends.
 									</ResumeCard>
-									<ResumeCard
-										title="Kickball League of Rochester"
-										subtitle="Recreational player"
-										date="Summer 2017 - Current"
-										caption="">
-										I started playing kickball in 2017 after a close friend of mine asked me to join his team with a number of his colleagues. It quickly became one of my favorite recreational pastimes to enjoy with my friends. In addition to loving the game, I enjoy the post-game celebrations each week at whichever local bar sponsors our team! It's a wonderful opportunity to spend time with my friends during the week, in addition to meeting new people and making new friends during the games.
-									</ResumeCard>
 								</Grid>
 							</Grid>
 						</div>
