@@ -14,9 +14,9 @@ class App extends Component {
 						palette: {
 							type: context.isDark ? 'dark' : 'light',
 							primary: {
-								main: '#273a42',
+								main: '#1f2e34',
 								secondary: '#c07279',
-								hoverMain: '#131c20',
+								hoverMain: '#172227',
 								hoverSecondary: '#b86168'
 							},
 						},
