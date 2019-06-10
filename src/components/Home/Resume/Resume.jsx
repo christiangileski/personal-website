@@ -109,7 +109,7 @@ function Resume(props) {
 							<Grid container direction="row">
 								<Grid className={classes.cardCategory} item xs={12} sm={3}>
 									<Typography className={classes.cardCategoryLabel} variant="headline">
-										Activities and Honors
+										Extracurriculars
 									</Typography>
 								</Grid>
 								<Grid item xs={12} sm={9}>
